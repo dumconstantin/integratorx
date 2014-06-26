@@ -1,0 +1,36 @@
+{
+  "html": "<div id='global'>{% default.page %}</div>",
+  "elements": {},
+  "plugins": {
+    "page": {
+      "html": "<div id='global-page'>{{ page.header }}{{ page.content }}{{ page.footer }}</div>",
+      "elements": {
+        "header": "<div id='global-page-header'><div id='global-page-header-Rectangle-2'></div><div id='global-page-header-Rectangle-1'></div><span id='global-page-header-Header-Text'>Header Text</span></div>",
+        "content": "<div id='global-page-content'>{% page.products %}</div>",
+        "footer": "<div id='global-page-footer'><div id='global-page-footer-Rectangle-4'></div><div id='global-page-footer-Rectangle-3'></div><span id='global-page-footer-Footer-Text'>Footer Text</span></div>"
+      },
+      "plugins": {
+        "products": {
+          "html": "<div id='global-page-content-products'><div id='global-page-content-products-pagination'></div>{{ products.product }}<img id='global-page-content-products-area' src='images/ShopProducts_psd_global-page-content-products_global-page-content-products-area.png' /></div>",
+          "elements": {
+            "product": "<div id='global-page-content-products-product'><span id='global-page-content-products-product-name'>{{ products.product.name }}</span><span id='global-page-content-products-product-price'>{{ products.product.price }}</span><div id='global-page-content-products-product-picture'>{{ products.product.picture }}</div><div id='global-page-content-products-product-box'></div></div>"
+          },
+          "plugins": {},
+          "contents": {
+            "products.product.name": [
+              "Name"
+            ],
+            "products.product.price": [
+              "50$"
+            ],
+            "products.product.picture": [
+              null
+            ]
+          }
+        }
+      },
+      "contents": {}
+    }
+  },
+  "contents": {}
+}

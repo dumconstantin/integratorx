@@ -1,0 +1,36 @@
+<div id='global'>
+    <div id='global-page'>
+        <div id='global-page-header'>
+            <div id='global-page-header-Rectangle-2'></div>
+            <div id='global-page-header-Rectangle-1'></div>
+            <span id='global-page-header-Header-Text'>Header Text</span></div>
+        <div id='global-page-content'>{% for product in pager %}
+
+                {% if not sonata_product_has_variations(product) or (sonata_product_has_variations(product) and sonata_product_has_enabled_variations(product)) %}
+                    <div id='global-page-content-products'>
+                    <div id='global-page-content-products-pagination'></div>
+                    <div id='global-page-content-products-product'><span
+                                id='global-page-content-products-product-name'>{{ product.name }}</span><span
+                                id='global-page-content-products-product-price'>{% if not sonata_product_has_variations(product) %}
+{{ sonata_product_price(product, currency, true)|number_format_currency(currency) }}
+{% else %}
+                                {% trans from 'SonataProductBundle' %}product_variation_min_price{% endtrans %}
+
+                                {% set cheapest_variation = sonata_product_cheapest_variation(product) %}
+                                {{ sonata_product_price(cheapest_variation, currency, true)|number_format_currency(currency) }}
+                            {% endif %}</span>
+
+                        <div id='global-page-content-products-product-picture'>{% media product.image, 'small' with {'itemprop': 'image', 'class': 'img-responsive', 'width': null, 'height': null} %}</div>
+                        <div id='global-page-content-products-product-box'></div>
+                    </div>
+                    <img id='global-page-content-products-area'
+                         src='images/ShopProducts_psd_global-page-content-products_global-page-content-products-area.png'/>
+                    </div>{% endif %}
+
+            {% endfor %}</div>
+        <div id='global-page-footer'>
+            <div id='global-page-footer-Rectangle-4'></div>
+            <div id='global-page-footer-Rectangle-3'></div>
+            <span id='global-page-footer-Footer-Text'>Footer Text</span></div>
+    </div>
+</div>

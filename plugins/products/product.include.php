@@ -1,0 +1,1 @@
+{% include 'SonataProductBundle:Catalog:_product_grid.html.twig' %}

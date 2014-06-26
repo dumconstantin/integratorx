@@ -1,0 +1,20 @@
+{
+    "name": "brandup/generatorx",
+    "description": "GeneratorX Integrator",
+    "minimum-stability": "dev",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Daniel Teodoroiu",
+            "email": "daniel.teodoroiu@brandup.ro"
+        }
+    ],
+    "require": {
+        "twig/twig": "1.6.5"
+    },
+    "autoload": {
+        "psr-0": {
+            "GeneratorX": "src"
+        }
+    }
+}

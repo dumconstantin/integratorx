@@ -1,0 +1,1 @@
+{% media product.image, 'small' with {'itemprop': 'image', 'class': 'img-responsive', 'width': null, 'height': null} %}
